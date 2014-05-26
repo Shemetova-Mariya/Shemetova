@@ -1,4 +1,6 @@
-import junit.framework.Assert;
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -9,18 +11,39 @@ import org.junit.Test;
  * To change this template use File | Settings | File Templates.
  */
 public class OperationTests {
+	@Test
+	public void testAddition(){
+		Integer result = new Integer(4);
+		assertEquals(result,(Number)4); 
 
-    public static Addition prepare(){
-        return new Addition();
-    }
+		assertEquals(result, new Integer(4)); //true
+		//assertEquals(result, (new ChainInteger).add(1,3))
+		assertEquals(new Integer(7), (new Addition()).apply(1,6)); //true
+	}
 
-    @Test
-    public void testAddition(){
-        Addition op = prepare();
+	@Test
+	public void testSubtraction(){
+		Integer result = new Integer(6);
 
-        Assert.assertEquals();
-        Integer result = op.apply(2,2);
+		assertEquals(result, (new Subtraction()).apply(9,3)); //true
+	}
+	
+	@Test
+	public void testMultiplication(){
+		Integer result = new Integer(15);
 
-    }
+		assertEquals(result, (new Multiplication()).apply(5,3)); //true
+	}
+	
+	@Test
+	public void testStep(){
+		Integer result = new Integer(27);
 
+		assertEquals(result, (new Step()).apply(3,3)); //true
+	}
+	
+	@Test
+	public void testAlwaysPassed(){
+		assertTrue(true);
+	}
 }

@@ -1,4 +1,3 @@
-import java.lang.*;
 
 /**
  * Created with IntelliJ IDEA.
